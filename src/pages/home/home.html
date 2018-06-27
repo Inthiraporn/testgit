@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar  >
+     <!-- <button ion-button icon-only menu-toggle><ion-icon name="menu"></ion-icon></button>-->
+    <img  class="center_div" src="../assets/imgs/logos.png" width="150" style="align-items: center">
+  </ion-navbar>
+
+</ion-header><br><br>
+
+<ion-content padding>
+
+  <ion-list>
+      
+      <h5 ionic text-center style="font-size: 30px; font-weight: bold; font-family: 'Designil Font', 'Helvetica', sans-serif;">เข้าสู่ระบบเพื่อใช้งาน</h5><br><br><br>
+      <ion-card style="background-color:#FFFFFF">
+      <ion-list>
+        
+          <ion-col col-8>
+              <p text-left style="font-size: 18px; color: #000000">รหัสพนักงาน</p>
+              <ion-item>
+                <ion-input  style litype="text" placeholder="กรุณากรอกรหัสพนักงาน" icon="home" ></ion-input>
+              </ion-item>
+            </ion-col>
+                 
+            <ion-col col-8>
+                <p text-left style="font-size: 18px; color: #000000"> รหัสผ่าน</p>
+                <ion-item>
+                    <ion-input  style litype="text" placeholder="กรุณากรอกรหัสผ่าน" icon="home"  ></ion-input>
+                </ion-item>
+              </ion-col>
+          
+
+          <div padding>
+              <button style="font-size: 20px" ion-button round text-left ion-button full (click)="gopage1()">เข้าสู่ระบบ</button>
+
+            
+              </div>
+        </ion-list>
+       </ion-card>
+        
+        
+  
+  </ion-list>
+  
+</ion-content>

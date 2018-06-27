@@ -1,0 +1,177 @@
+<ion-header>
+    <ion-navbar>
+        <img  class="center_div" src="../assets/imgs/logos.png" width="150" style="align-items: center">
+      <ion-title>
+        <h2 style="text-align: right">
+          สถานะ EA : กทม. 1002 &emsp;สถานะ :
+          <b style="color: rgb(179, 20, 20)">กำลังตรวจ</b>
+        </h2>
+      </ion-title>
+    </ion-navbar>
+    <div >
+        <ion-segment [(ngModel)]="sn">
+          <ion-segment-button id="segment-button" value="sn1"  style="font-family:Arial; font-size: 18px; background-color:#0066FF; color: 
+          #FFFFFF" >
+            สถานะข้อมูลอาคาร
+          </ion-segment-button>
+          <ion-segment-button id="segment-button" value="sn2" style="font-family:Arial; font-size: 18px; background-color:#0066FF; color: 
+          #FFFFFF" >
+            FS ให้แก้ข้อมูล
+          </ion-segment-button>
+          <ion-segment-button id="segment-button" value="sn3" style="font-family:Arial; font-size: 18px; background-color:#0066FF; color: 
+          #FFFFFF" >
+            สน.2-2 พื้นที่ย่อย
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+  </ion-header>
+  
+  <ion-content padding text-center>
+    <div [ngSwitch]="sn">
+      <ion-slides #slider>
+        <ion-slide *ngSwitchCase="'sn1'">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>
+                <ion-list> 
+                  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="ค้นหาเลขที่บ้าน"></ion-searchbar>
+                </ion-list>
+              </ion-col>
+              <ion-col col-4>
+                <ion-list>
+                  <ion-item>
+                    <ion-label style="font-size: 18px; color: #000000">ข้อมูล</ion-label>
+                    <ion-select [(ngModel)]="snn" interface="popover">
+                      <ion-option value="1">ข้อมูลทั้งหมด</ion-option>
+                      <ion-option value="2">ส่งแล้ว</ion-option>
+                      <ion-option value="3">รอส่ง</ion-option>
+                      <ion-option value="4">หยุดชั่วคราว</ion-option>
+                      <ion-option value="5">สำรวจครั้งที่ 1 และ 2</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+  
+          <ion-row style="text-align:center;border-bottom:1px solid;border-top:1px solid;">
+            <ion-col col-2 style="font-size:15px;">ลำดับที่</ion-col>
+            <ion-col col-2 style="font-size:18px;">บ้านเลขที่</ion-col>
+            <ion-col col-2 style="font-size:18px;">ชื่อสถานที่</ion-col>
+            <ion-col col-4>
+              <ion-row text-wrap style="font-size:16px;margin-left:auto;">
+                ครัวเรือน / สถานประกอบการ
+              </ion-row>
+              <ion-row style="text-align:center">
+                <ion-col col-4 style="font-size:16px;">ทั้งสิ้น</ion-col>
+                <ion-col col-4 style="font-size:16px;">ไม่สมบูรณ์</ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-1 style="font-size:14px;" no-margin>แก้ไข</ion-col>
+            <ion-col col-1 style="font-size:14px;" no-margin>ลบ</ion-col>
+          </ion-row>
+        
+              <button  style="font-size: 20px" color="secondary" ion-button round text-left ion-button full (click)="gopage2()">สำรวจหน่วยต่อไป</button>
+        
+  
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <div [ngSwitch]="sn">
+      <ion-slides #slider>
+        <ion-slide *ngSwitchCase="'sn2'">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>
+                <ion-list>
+                  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="ค้นหาเลขที่บ้าน"></ion-searchbar>
+                </ion-list>
+              </ion-col>
+              <ion-col col-4>
+                <ion-list>
+                  <ion-item>
+                      <ion-label style="font-size: 18px; color: #000000">ข้อมูล</ion-label>
+                      <ion-select [(ngModel)]="snn" interface="popover">
+                        <ion-option value="1">ข้อมูลทั้งหมด</ion-option>
+                        <ion-option value="2">ส่งแล้ว</ion-option>
+                        <ion-option value="3">รอส่ง</ion-option>
+                        <ion-option value="4">หยุดชั่วคราว</ion-option>
+                        <ion-option value="5">สำรวจครั้งที่ 1 และ 2</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+  
+          <ion-row style="text-align:center;border-bottom:1px solid;border-top:1px solid;">
+            <ion-col col-2 style="font-size:15px;">ลำดับที่</ion-col>
+            <ion-col col-2 style="font-size:18px;">บ้านเลขที่</ion-col>
+            <ion-col col-2 style="font-size:18px;">ชื่อสถานที่</ion-col>
+            <ion-col col-4>
+              <ion-row text-wrap style="font-size:16px;margin-left:auto;">
+                ครัวเรือน / สถานประกอบการ
+              </ion-row>
+              <ion-row style="text-align:center">
+                <ion-col col-4 style="font-size:16px;">ทั้งสิ้น</ion-col>
+                <ion-col col-4 style="font-size:16px;">ไม่สมบูรณ์</ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-1 style="font-size:14px;" no-margin>แก้ไข</ion-col>
+            <ion-col col-1 style="font-size:14px;" no-margin>ลบ</ion-col>
+          </ion-row>
+  
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <div [ngSwitch]="sn">
+      <ion-slides #slider>
+        <ion-slide *ngSwitchCase="'sn3'">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>
+                <ion-list>
+                  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="ค้นหาเลขที่บ้าน"></ion-searchbar>
+                </ion-list>
+              </ion-col>
+              <ion-col col-4>
+                <ion-list>
+                  <ion-item>
+                      <ion-label style="font-size: 18px; color: #000000">ข้อมูล</ion-label>
+                      <ion-select [(ngModel)]="snn" interface="popover">
+                        <ion-option value="1" >ข้อมูลทั้งหมด</ion-option>
+                        <ion-option value="2">ส่งแล้ว</ion-option>
+                        <ion-option value="3">รอส่ง</ion-option>
+                        <ion-option value="4">หยุดชั่วคราว</ion-option>
+                        <ion-option value="5">สำรวจครั้งที่ 1 และ 2</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+  
+          <ion-row style="text-align:center;border-bottom:1px solid;border-top:1px solid;">
+            <ion-col col-2 style="font-size:15px;">ลำดับที่</ion-col>
+            <ion-col col-2 style="font-size:18px;">บ้านเลขที่</ion-col>
+            <ion-col col-2 style="font-size:18px;">ชื่อสถานที่</ion-col>
+            <ion-col col-4>
+              <ion-row text-wrap style="font-size:16px;margin-left:auto;">
+                ครัวเรือน / สถานประกอบการ
+              </ion-row>
+              <ion-row style="text-align:center">
+                <ion-col col-4 style="font-size:16px;">ทั้งสิ้น</ion-col>
+                <ion-col col-4 style="font-size:16px;">ไม่สมบูรณ์</ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-1 style="font-size:14px;" no-margin>แก้ไข</ion-col>
+            <ion-col col-1 style="font-size:14px;" no-margin>ลบ</ion-col>
+          </ion-row>
+              <button  style="font-size: 20px" color="secondary" ion-button round text-left ion-button full (click)="gopage2-1()">สำรวจหน่วยต่อไป</button>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+  </ion-content>

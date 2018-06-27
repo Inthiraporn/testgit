@@ -1,0 +1,234 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img class="center_div" src="../assets/imgs/logos.png" width="150" style="align-items: center">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <h5 ionic text-center style="background-color:#ffffff;font-size: 30px; font-weight: bold; font-family: 'Designil Font', 'Helvetica', sans-serif;">แบบบันทึกการนับจด สน.1</h5>
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button id="segment-button" style="font-family:Arial; font-size: 18px; background-color:#0066FF; color: 
+        #FFFFFF" value="หน้าที่ 1">
+        หน้าที่ 1
+      </ion-segment-button>
+      <ion-segment-button id="segment-button" style="font-family:Arial; font-size: 18px; background-color:#0066FF; color: 
+        #FFFFFF" value="หน้าที่ 2">
+        หน้าที่ 2
+      </ion-segment-button>
+      <ion-segment-button id="segment-button" style="font-family:Arial; font-size: 18px; background-color:#0066FF; color: 
+        #FFFFFF" value="หน้าที่ 3">
+        หน้าที่ 3
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+  <div [ngSwitch]="pet">
+    <ion-card style="background-color:#FFFFFF">
+      <ion-list *ngSwitchCase="'หน้าที่ 1'">
+        <ion-item>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ชื่อถนน/ลำน้ำหรือละแวกน้ำ</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ชื่อถนน/ลำน้ำหรือละแวกน้ำ</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ชื่อตรอก/ซอย</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ชื่อหมู่บ้าน/คอนโด/อาคาร/สำนักงาน/สถานประกอบการ/สถาบัน/อื่น ๆ</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000">เลขที่บ้าน/อาคาร </p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 20px; color: #0000CD; ">ละติจูด : </p>
+            <br>
+            <br>
+            <p text-left style="font-size: 20px; color:#0000CD	; ">ลองติจูด : </p>
+            <br>
+          </ion-col>
+          <ion-col col-6>
+            <ion-row>
+              <button style="font-size: 15px" color="secondary" ion-button round text-left ion-button (click)="gopage1()"> เปลี่ยนเป็นตำแหน่งปัจจุบัน </button>
+              <button style="font-size: 15px" color="#000080" ion-button round text-left ion-button (click)="gopage1()"> ดูตำแหน่งที่ตั้ง </button>
+            </ion-row>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ประเภทบ้าน/อาคาร/สิ่งปลูกสร้าง</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> การเข้าพบ 1/3 </p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ให้บันทึกข้อมูลเกี่ยวกับปัญหา/อุปสรรค/การนัดหมาย/เหตุผล ที่นับจดไม่ได้ </p>
+            <br>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <div padding>
+            <button style="font-size: 20px" ion-button round text-left ion-button full (click)="gopage1()">ถัดไป </button>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'หน้าที่ 2'">
+        <ion-item>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> จำนวนครัวเรือน/สถานประกอบการรวมทั้งหมด ในบ้าน/อาคารสิ่งหปลูกสร้าง</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+          <div padding>
+            <button style="font-size: 20px" ion-button round text-left ion-button full (click)="gopage1()">ถัดไป </button>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'หน้าที่ 3'">
+        <button style="font-size: 20px;background-color:#2F4F4F" back ion-button round text-left ion-button full (click)="gopage1()">
+          เพิ่ม ครัวเรือน/สถานประกอบการ</button>
+        <ion-item>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> 3.1 ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง</p>
+            <ion-item style="background-color:#DCDCDC">
+              <label> ลำดับครัวเรือน/สถานประกอบการในอาคาร &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                1 </label>
+            </ion-item>
+            <button style="font-size: 15 px;background-color:#ff0000" back ion-button round text-left ion-button  (click)="gopage1()">ลบครัวเรือน/สถานประกอบการ</button>  <br>
+          </ion-col>
+        </ion-item>
+
+        <ion-item>
+          <p text-left style="font-size: 18px; color: hsl(0, 0%, 0%)"> 3.2 กิจกรรมการใช้น้ำ</p>
+        </ion-item>
+        <ion-row radio-group [(ngModel)]="relationship">
+          <ion-col style="text-align:left">
+            <ion-item>
+              <label>1.เพื่อการอุปโภคบริโภค:สถานที่นี้มีผู้อาศัยติดต่อกันเกิน 3 เดือนใช่หรือไม่</label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>1. ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>2. ไม่ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row radio-group [(ngModel)]="relationship">
+          <ion-col style="text-align:left">
+            <ion-item>
+              <label>2.เพื่อการเกษตร:ผู้อยูอาศัยอยู่ในสถานที่นี้มีพื้นที่ปลูกพืช เลี้ยงสัตว์ หรือทำการเกษตรใช่หรือไม่</label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>1. ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>2. ไม่ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row radio-group [(ngModel)]="relationship">
+          <ion-col style="text-align:left">
+            <ion-item>
+              <label>3.เพื่อการผลิต:สถานที่นี้ใช้เพื่อทำการผลิต ใช่หรือไม่</label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>1. ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>2. ไม่ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row radio-group [(ngModel)]="relationship">
+          <ion-col style="text-align:left">
+            <ion-item>
+              <label>4.เพื่อการบริการ:สถานที่นี้ใช้เพื่อทำการบริการ ใช่หรือไม่</label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>1. ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>2. ไม่ใช้</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-item>
+          <ion-col col-6>
+            <p text-left style="font-size: 18px; color: #000000"> ปัญหา/อุปสรรค</p>
+            <ion-item>
+              <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-item>
+        <button style="font-size: 20px" color="secondary" ion-button round text-left ion-button full (click)="gofrom1()"> เริ่มสำรวจ สน.2-1</button>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>
